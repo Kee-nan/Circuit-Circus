@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Creation/Edit - CircuitCircus</title>
+  <link rel="stylesheet" type="text/css" href="styles/creation-styles.css"> 
+  
+  <style>
+    /* Additional styles for the edit feature */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #30415d;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 20px;
+      border: 2px solid #30415d; /* Thick, dark blue border */
+      border-radius: 15px; /* Rounded corners */
+      background-color: rgb(250, 249, 239);; /* Off-white background color */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    }
+
+    .account-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Add this to push edit button to the right */
+    }
+    .account-info p {
+      margin: 0;
+      flex: 1; /* Add this to make the <p> take up available space */
+      font-weight: bold; /* Bolder style for identifiers */
+    }
+    .edit-button {
+      font-size: 12px; 
+      width: 70px;
+      margin-left: 25px;
+      height: 30px;
+      background-color: #CF6766; /* Dark blue background */
+      color: white; /* White text */
+      border: none;
+      padding-left: -10px;
+    }
+    .edit-input {
+      display: none;
+      margin-left: 10px;
+    }
+    button {
+      margin-top: 10px;
+      background-color: #CF6766; /* Dark blue background */
+      color: white; /* White text */
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center; /* Center the text */
+    }
+  </style>
+ 
+  
+</head>
+
+<body>
+  <div class="container">
+    
+    <h1>Circuit Circus</h1>
+
+    <div class="account-info">
+      <p>Email Address: <span id="email">Bob.Jones@gmail.com</span></p>
+      <button class="edit-button" onclick="editAttribute('email')">Edit</button>
+      <input class="edit-input" type="text" id="editEmail" data-attribute="email">
+    </div>
+
+    <div class="account-info">
+      <p>First Name: <span id="firstName">Bob</span></p>
+      <button class="edit-button" onclick="editAttribute('firstName')">Edit</button>
+      <input class="edit-input" type="text" id="editFirstName" data-attribute="firstName">
+    </div>
+
+    <div class="account-info">
+      <p>Last Name: <span id="lastName">Jones</span></p>
+      <button class="edit-button" onclick="editAttribute('lastName')">Edit</button>
+      <input class="edit-input" type="text" id="editLastName" data-attribute="lastName">
+    </div>
+
+    <div class="account-info">
+      <p>Location: <span id="location">Cincinnati, OH</span></p>
+      <button class="edit-button" onclick="editAttribute('location')">Edit</button>
+      <input class="edit-input" type="text" id="editLocation" data-attribute="location">
+    </div>
+
+    <div class="account-info">
+      <p>Password: *********</p>
+      <button class="edit-button" onclick="editAttribute('password')">Edit</button>
+      <input class="edit-input" type="password" id="editPassword" data-attribute="password">
+    </div>
+
+    <div class="account-info">
+      <p>Verify Password: *********</p>
+      <button class="edit-button" onclick="editAttribute('verifyPassword')">Edit</button>
+      <input class="edit-input" type="password" id="editVerifyPassword" data-attribute="verifyPassword">
+    </div>
+
+    <button onclick="saveChanges()">Save Changes</button>
+    <a href="profileChanged.html">
+      <button>Done</button>
+    </a>
+    
+  </div>
+
+  <script>
+    function editAttribute(attribute) {
+      // Hide the <span> and show the corresponding input box
+      const spanElement = document.getElementById(attribute);
+      const inputElement = document.getElementById('edit' + capitalizeFirstLetter(attribute));
+      spanElement.style.display = 'none';
+      inputElement.style.display = 'inline';
+      inputElement.value = spanElement.innerText;
+    }
+
+    function saveChanges() {
+      // Save the changes and update only the edited <span> elements with new values
+      const inputElements = document.querySelectorAll('.edit-input');
+      for (let i = 0; i < inputElements.length; i++) {
+        const inputElement = inputElements[i];
+        if (inputElement.style.display === 'inline') {
+          const attribute = inputElement.getAttribute('data-attribute');
+          const spanElement = document.getElementById(attribute);
+          spanElement.innerText = inputElement.value;
+          inputElement.style.display = 'none';
+          spanElement.style.display = 'inline';
+        }
+      }
+    }
+
+    function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+  </script>
+</body>
+</html>

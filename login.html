@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Login - CircuitCircus</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="styles/login-styles.css">
+
+
+  </head>
+
+
+  <body>
+    <nav class="header">
+
+      
+      <!-- LOGO -->
+      <div class="title">
+          <a href="homepage.html"><img src="icons/logoicon.png" class="logo"></a>
+      </div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+
+         
+          <li><a href="forum.html"><img src="icons/forumicon.png" class="forum"></a></li>
+          <li><a href="login.html"><img src="icons/signinicon.png" class="signin"></a></li>
+          <li><a href="profile.html"><img src="icons/homepageprofile.png" class="account"></a></li>
+        </div>
+      </ul>
+    
+    </nav>
+
+
+    <div class="main-body">
+  
+    <div class="interactive">
+    <!--Login Inputs for Username and Password-->
+      <h1>Circuit Circus</h1>
+
+    <div class="userinputs">
+      <input id="usernameInput" placeholder="Email">
+      <input id="passwordInput" placeholder="Password">
+    </div>
+   
+      <!-- Login Button -->
+      <div class="userbuttons">
+      <a id="loginButton">
+        <button>
+          Login
+        </button>
+      </a>
+
+      <!--New Account Button-->
+    <a href="creation.html">
+      <button> 
+        Create a New Account
+      </button> 
+    </a>
+    </div>
+
+    <!--Account Creation Prompt-->
+    <p> Don't have an account? Create one!</p>
+
+    </div>
+
+    <script>
+
+      
+      // Function to handle the login button click
+      function handleLogin() {
+        // Get the input values
+        const username = document.getElementById("usernameInput").value;
+        const password = document.getElementById("passwordInput").value;
+        
+          if (username === "Bob.jones@gmail.com"){
+            alert("Error: Account does not Exist")
+            return;
+          }
+          // Check if the input values match the specified strings
+          if (username === "Bob.Jones@gmail.com" && password === "Password123") {
+            // If the input values match, set the login button's href to the desired page
+            document.getElementById("loginButton").href = "homepage.html";
+          } else {
+            // If the input values don't match, raise an alert
+            alert("Error: Username and Password don't match");
+          }
+      }
+   
+  
+     
+      // Attach the handleLogin function to the login button's click event
+      document.getElementById("loginButton").addEventListener("click", handleLogin);
+    </script>
+
+  </div>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+
+
+/* UTILITIES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* header bar */
+.header {
+  height: 120px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #30415D;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: 1px solid black;
+}
+
+/* LOGO */
+.logo {
+  max-width: 300px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.signin, .forum {
+  max-width: 120px;
+  margin-right: 5px;
+}
+
+.account {
+  max-width: 70px;
+  margin-right: 5px;
+}
+
+.search-bar{
+  width: calc(100%-370px);
+  background-color: #8EAEBD;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 60px;
+  gap: 10px;
+  padding: 10px 20px;
+  backdrop-filter: blur(4px) saturate(180%);
+
+  margin-right: 10px;
+}
+
+.search-bar input{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  font-size: 15px;
+  color: #000;
+  margin: 0 auto;
+}
+
+::placeholder{
+    color: #30415D;
+}
+
+.search-bar button img{
+    width: 20px;
+}
+
+.search-bar button{
+    border: 0;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    background: #30415D;
+    cursor: pointer;
+}
+
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: #CF6766;
+}
+
+
+.main-body {
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  align-items: center;
+  justify-content: start;
+  text-align: start;
+  box-sizing: content-box;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #8EAEBD;
+  line-height: 1.8;
+  padding: 50px;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  grid-template-areas: 
+    "post1  post2"
+    "post3  post4";
+  gap: 20px;
+  position: relative;
+}
+
+
+
+.post-box1, .post-box2, .post-box3, .post-box4 {
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.new-post {
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.post-box1 {
+  grid-area: post1;
+}
+
+.post-box2 {
+  grid-area: post2;
+}
+
+.post-box3 {
+  grid-area: post3;
+}
+
+.post-box4 {
+  grid-area: post4;
+}
+
+.main-body h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.main-body h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.main-body h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.main-body h5 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.main-body h6 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+/*CREATE POST*/
+.createpost, .elephantpost {
+  display: flex;
+  position: fixed;
+  max-width: 150px;
+  bottom: 70px;
+  right: 20%;
+  z-index: 999;
+}
+
+.writing-post {
+  margin-top:100px;
+  width: 80%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.userinput {
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}

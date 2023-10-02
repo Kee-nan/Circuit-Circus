@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Listing</title>
+  
+  <link rel="stylesheet" href="styles/listingCreation-styles.css">
+
+</head>
+<body>
+  
+  <nav class="header">
+    <!-- LOGO -->
+    <div class="title">
+        <a href="homepage.html"><img src="icons/logoicon.png" class="logo"></a>
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+
+        <form action="" class="search-bar">
+            <input type="text" placeholder="Search Items" name="q">
+            <button type="submit" class="search-bar"><img src="icons/search.png"></button>
+        </form>
+        <li><a href="forum.html"><img src="icons/forumicon.png" class="forum"></a></li>
+        <li><a href="login.html"><img src="icons/signinicon.png" class="signin"></a></li>
+        <li><a href="profile.html"><img src="icons/homepageprofile.png" class="account"></a></li>
+      </div>
+    </ul>
+  
+  </nav>
+
+  <div class="main-body">
+  <h1 style = "color:#000">Create Listing</h1>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title">
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+    <div class="questions">
+    <label for="condition">Condition:</label>
+    <select id="condition" name="condition" option>
+      <option value="new">New</option>
+      <option value="like_new">Like New</option>
+      <option value="used">Used</option>
+      <option value="fair">Fair</option>
+    </select>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location">
+    </div>
+    
+
+   
+  </form>
+
+  <a href="homepage2.html"><img src="icons/elephantpost.png" class="elephantpost"></a>
+  
+</div>
+</body>
+</html>

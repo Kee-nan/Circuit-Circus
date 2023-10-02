@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>Account Creation - CircuitCircus</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles/creation-styles.css">
+
+
+  </head>
+
+
+  <body>
+    <nav class="header">
+      <!-- LOGO -->
+      <div class="title">
+        <a href="homepage.html"><img src="icons/logoicon.png" class="logo"></a>
+      </div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+
+        
+          <li><a href="forum.html"><img src="icons/forumicon.png" class="forum"></a></li>
+          <li><a href="login.html"><img src="icons/signinicon.png" class="signin"></a></li>
+          <li><a href="profile.html"><img src="icons/homepageprofile.png" class="account"></a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="main-body">
+<p> Please enter the following information to create your account</p>
+
+<input class="account-input" placeholder="Email Address">
+<input class="account-input" placeholder="First Name">
+<input class="account-input" placeholder="Last Name">
+<input class="account-input" placeholder="Location">
+<input class="account-input" id="passwordInput" placeholder="Password">
+<input class="account-input" id="verifyPasswordInput" placeholder="Verify Password">
+<a onclick="createAccount()"> <!-- Call the createAccount function -->
+  <button>Create Account</button>
+</a>
+
+<!-- JavaScript code -->
+<script>
+  function createAccount() {
+    // Get the input values
+    const email = document.getElementsByClassName("account-input")[0].value;
+    const firstName = document.getElementsByClassName("account-input")[1].value;
+    const lastName = document.getElementsByClassName("account-input")[2].value;
+    const password = document.getElementById("passwordInput").value;
+    const verifyPassword = document.getElementById("verifyPasswordInput").value;
+
+    // Check if the password and verify password match
+    if (password !== verifyPassword) {
+      alert("Error: Passwords do not match");
+      return; // Stop the function if passwords don't match
+    } else {
+      alert("Account Creation Successful!")
+      window.location.href = "login.html";
+    }
+  }
+    </script>
+    </div>
+  </body>
+</html>
